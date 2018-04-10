@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<title>Contrôle de VLC</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		Commande de VLC<br><br>
+
+		<input type="button" name="play" id="btn_play" value="PLAY"/>
+		<input type="button" name="stop" id="btn_stop" value="STOP"/>
+		<input type="button" name="fullscreen" id="btn_fullscreen" value="FULLSCREEN"/>
+
+		<script type="text/javascript">
+
+		$("#btn_play").click(function() {
+			$.get( "vlc/requests/status.json?command=in_play&input=stranger.avi");
+		});
+
+		$("#btn_stop").click(function() {
+			$.get( "vlc/requests/status.json?command=pl_stop");
+		});
+
+		$("#btn_fullscreen").click(function() {
+			$.get( "vlc/requests/status.json?command=fullscreen");
+		});
+
+		</script>
+
+
+	</body>
+
+
+</html>
